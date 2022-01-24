@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" stylesheets="/movie_crud/ui/styles/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tic1.client.ui.movie.MovieController">
+    <children>
+        <BorderPane prefHeight="500.0" prefWidth="500.0">
+            <center>
+                <VBox fx:id="mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="497.0" prefWidth="500.0" spacing="10.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <JFXTextField fx:id="txtName" focusColor="WHITE" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="500.0" promptText="Nombre" styleClass="text-field" unFocusColor="WHITE">
+                            <font>
+                                <Font name="Arial" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="15.0" left="20.0" right="20.0" top="20.0" />
+                            </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtDescription" focusColor="WHITE" labelFloat="true" layoutX="35.0" layoutY="95.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="500.0" promptText="Descripcion" styleClass="text-field" unFocusColor="WHITE">
+                            <font>
+                                <Font name="Arial" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="15.0" left="20.0" right="20.0" />
+                            </VBox.margin>
+                        </JFXTextField>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXComboBox fx:id="txtActors" focusColor="WHITE" labelFloat="true" prefHeight="26.0" prefWidth="250.0" promptText="Actores" unFocusColor="WHITE" />
+                        <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" onAction="#addActor" prefHeight="35.0" prefWidth="35.0" textFill="#87515100">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="160.0" layoutY="10.0" onAction="#removeActor" prefHeight="35.0" prefWidth="35.0" textFill="#87515100">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="20" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <Label text="Actores:" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="actorsList" disable="true" prefHeight="200.0" prefWidth="200.0" promptText="Actores" styleClass="actors_list" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </TextArea>
+                        <JFXTextField fx:id="txtDuration" focusColor="WHITE" labelFloat="true" layoutX="15.0" layoutY="505.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="500.0" promptText="Duracion" styleClass="text-field" unFocusColor="WHITE">
+                            <font>
+                                <Font name="Arial" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="15.0" left="20.0" right="20.0" />
+                            </VBox.margin>
+                        </JFXTextField>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                              <JFXComboBox fx:id="txtGenre" focusColor="WHITE" labelFloat="true" prefHeight="26.0" prefWidth="250.0" promptText="Genero" styleClass="combo-box" unFocusColor="WHITE" />
+                        <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" onAction="#addGenre" prefHeight="35.0" prefWidth="35.0" textFill="#87515100">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="135.0" layoutY="10.0" onAction="#removeGenre" prefHeight="35.0" prefWidth="35.0" textFill="#87515100">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="20" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <Label layoutX="35.0" layoutY="211.0" text="Generos:" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="genresList" disable="true" prefHeight="200.0" prefWidth="200.0" promptText="Generos" styleClass="actors_list" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <TextField fx:id="imageId" disable="true" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" promptText="Imagen" styleClass="image-field">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton fx:id="fileChooser" maxHeight="-Infinity" minHeight="-Infinity" onAction="#chooseFile" prefHeight="35.0" styleClass="image_button" text="Seleccionar...">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            </center>
+            <bottom>
+                <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="550.0" spacing="10.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <JFXButton alignment="CENTER" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="90.0" styleClass="button" text="Cancelar">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER" mnemonicParsing="false" onAction="#addMovie" prefHeight="30.0" prefWidth="90.0" styleClass="button" text="Guardar">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="20.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                    </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" top="10.0" />
+               </padding>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</StackPane>

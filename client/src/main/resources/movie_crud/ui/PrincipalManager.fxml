@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" stylesheets="/movie_crud/ui/styles/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tic1.client.ui.PrincipalManagerController">
+    <children>
+        <AnchorPane fx:id="mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0">
+            <children>
+                <AnchorPane prefHeight="500.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="250.0">
+                            <children>
+                                <Label text="Admin V1.0.0">
+                                    <font>
+                                        <Font name="Arial" size="24.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets left="25.0" />
+                                    </padding>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <VBox layoutY="94.0" prefHeight="406.0" prefWidth="250.0" styleClass="toolbar-container" AnchorPane.leftAnchor="0.0">
+                            <children>
+                                <JFXTextField fx:id="filter" focusColor="WHITE" labelFloat="true" promptText="Filtrar" unFocusColor="WHITE">
+                                    <font>
+                                        <Font name="Arial" size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="25.0" right="25.0" top="10.0" />
+                                    </VBox.margin>
+                                </JFXTextField>
+                                <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" onAction="#createFunction" prefHeight="60.0" prefWidth="250.0" styleClass="toolbar-button-admin" text="Agregar Funcion">
+                                    <VBox.margin>
+                                        <Insets top="2.0" />
+                                    </VBox.margin>
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="STAR" size="22" />
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="25.0" />
+                                    </padding>
+                                </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" onAction="#createSala" prefHeight="60.0" prefWidth="250.0" styleClass="toolbar-button-admin" text="Agregar Sala">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="25.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" size="22" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" layoutX="10.0" layoutY="114.0" onAction="#addManager" prefHeight="60.0" prefWidth="250.0" styleClass="toolbar-button-admin" text="Agregar Manager">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="25.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" size="22" />
+                           </graphic>
+                        </JFXButton>
+                                <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" layoutX="10.0" layoutY="35.0" onAction="#consultar" prefHeight="60.0" prefWidth="250.0" styleClass="toolbar-button-admin" text="Consultar Saldo">
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="22" />
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="25.0" />
+                                    </padding>
+                                </JFXButton>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="150.0">
+                           <children>
+                              <JFXButton fx:id="minus_button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" onAction="#previousPage" prefHeight="40.0" prefWidth="40.0" style="-fx-border-width: 1px 0px 1px 1px; -fx-background-radius: 20px 0px 0px 20px; -fx-border-radius: 20px 0px 0px 20px; -fx-border-color: white !important;" styleClass="minus-button" textFill="TRANSPARENT">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="MINUS" size="15" />
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="2.0" top="2.0" />
+                                 </padding>
+                              </JFXButton>
+                              <TextField fx:id="pages" alignment="CENTER" disable="true" prefHeight="40.0" prefWidth="50.0" promptText="0" style="-fx-border-radius: 0; -fx-background-radius: 0; -fx-border-color: white; -fx-text-fill: white; -fx-background-color: transparent; -fx-prompt-text-fill: white;">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </TextField>
+                              <JFXButton fx:id="plus_button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" onAction="#nextPage" prefHeight="40.0" prefWidth="40.0" style="-fx-border-width: 1px 1px 1px 0 px; -fx-background-radius: 0px 20px 20px 0px; -fx-border-radius: 0px 20px 20px 0px; -fx-border-color: white !important;" styleClass="plus-button" textFill="#bf8a8a00">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" />
+                                 </graphic>
+                                 <padding>
+                                    <Insets right="2.0" top="2.0" />
+                                 </padding>
+                              </JFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="47.0" top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="250.0" layoutY="79.0" prefHeight="500.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <BorderPane layoutX="99.0" layoutY="50.0" prefHeight="500.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <top>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <MenuButton fx:id="dropdownMenu" graphicTextGap="10.0" mnemonicParsing="false" styleClass="menu-button" text="Cuenta">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#logout" text="Cerrar Sesion" />
+                                                <MenuItem mnemonicParsing="false" onAction="#goToMain" text="Ir a Inicio" />
+                                            </items>
+                                            <font>
+                                                <Font name="Arial" size="16.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="USER" size="22" />
+                                            </graphic>
+                                        </MenuButton>
+                                    </children>
+                                    <padding>
+                                        <Insets right="25.0" />
+                                    </padding>
+                                </HBox>
+                            </top>
+                            <center>
+                                <JFXTabPane fx:id="mainTabPane" BorderPane.alignment="CENTER">
+                                    <tabs>
+                                        <Tab fx:id="functionTab" closable="false" styleClass="tab-main" text="Funciones Peliculas">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="functionTable" layoutX="55.0" layoutY="46.0" prefHeight="363.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="colMovie" prefWidth="175.0" text="Pelicula" />
+                                                                <TableColumn fx:id="colSalaId" prefWidth="175.0" text="ID Sala" />
+                                                                <TableColumn fx:id="colDate" prefWidth="175.0" text="Fecha" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="theatreTab" closable="false" styleClass="tab-main" text="Funciones Teatros">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView prefHeight="403.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="175.0" text="Nombre" />
+                                                                <TableColumn prefWidth="175.0" text="Duracion" />
+                                                                <TableColumn prefWidth="175.0" text="Genero" />
+                                                            </columns>
+                                                            <contextMenu>
+                                                                <ContextMenu>
+                                                                    <items>
+                                                                        <MenuItem mnemonicParsing="false" text="Editar" />
+                                                                        <MenuItem mnemonicParsing="false" text="Eliminar" />
+                                                                    </items>
+                                                                </ContextMenu>
+                                                            </contextMenu>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </JFXTabPane>
+                            </center>
+                        </BorderPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

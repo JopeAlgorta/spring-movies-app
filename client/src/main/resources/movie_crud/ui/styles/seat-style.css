@@ -1,0 +1,41 @@
+* {
+    -fx-primary: #2A2E37;
+    -fx-secondary: #FFFF8D;
+    -fx-primarytext: #B2B2B2;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1: #1976D2;
+}
+
+.seatButton{
+    -fx-background-color: -fx-primary;
+    -fx-border-color: none;
+}
+
+.seatButton:hover {
+    -fx-background-color: -fx-secondary;
+    -fx-border-color: -fx-secondary;
+}
+
+.seatSelected {
+    -fx-background-color: green;
+    -fx-border-color: -fx-secondary;
+}
+
+.seatOccupied {
+    -fx-background-color: red;
+    -fx-border-color: -fx-secondary;
+}
+
+.salaPane {
+    -fx-border-color: derive(-fx-primary, 60%);
+    -fx-border-width: 3px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 8px;
+    -fx-background-color: -fx-primary;
+}
+
+.buttonSelected {
+    -fx-background-color: green;
+    -fx-border-color: -fx-secondary;
+}

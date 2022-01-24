@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.9.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+group = 'tic1'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	runtimeOnly 'mysql:mysql-connector-java'
+    compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.5'
+	compile('tic1:commons')
+	compile "org.springframework.boot:spring-boot-configuration-processor"
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+//	implementation 'org.springframework.boot:spring-boot-starter-security'
+}
